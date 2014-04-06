@@ -1,0 +1,208 @@
+/*body {
+	background-image: url('http://i.imgur.com/jBRUyrn.png');
+
+    /*-webkit-transform: rotateZ(60deg); /* Chrome, Safari, Opera */
+    /*-webkit-transform-style: preserve-3d; /* Chrome, Safari, Opera */
+    /*transform-style: preserve-3d;
+    transform: rotateZ(60deg);
+
+	background-size: 100%;
+	font-family: 'Muli', sans-serif;
+	margin: 0px;
+}*/
+
+
+body {
+    background-image: url('http://i.imgur.com/jBRUyrn.png');
+    background-repeat: repeat-y;
+    background-position: top left;
+    background-attachment: fixed;
+    background-size: 100%;
+    font-family: 'Muli', sans-serif;
+    margin: 0px;
+}
+
+
+span.upload {
+    font-family: "Josefin Sans",sans-serif;
+    font-weight:300;
+    font-size:50px;
+}
+span.message {
+    font-family:'Josefin Sans', sans-serif;
+    font-weight:700;
+    font-size:50px;
+}
+
+.black {
+    color: black;
+}
+
+.noUnderline {
+    text-decoration: none;
+}
+
+.header {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+    color:#FFFFFF;
+    font-size:3em;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    background-color: rgba(0, 0, 0, 0.25);
+    
+    border-radius:10px;
+    text-decoration: none;
+}
+
+.noLinkFormat {
+    text-decoration: none;
+    color: white;
+}
+
+
+.centerDiv {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    -ms-filter: none;
+      filter: none;
+      -webkit-transition: opacity 0.3s ease-in-out;
+      -moz-transition: opacity 0.3s ease-in-out;
+      -o-transition: opacity 0.3s ease-in-out;
+      -ms-transition: opacity 0.3s ease-in-out;
+      transition: opacity 0.3s ease-in-out;
+}
+
+.body {
+	width:70%;
+    background-color: rgba(255, 255, 255, 0.5);
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: 10px;
+	font-family:'Muli',sans-serif;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 5%;
+    
+    margin-bottom: 7%;
+}
+
+
+.selectionbox {
+    width:50;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+    font-family:'Muli',sans-serif;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 5%;
+    
+    margin-bottom: 7%;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+label{
+	font-family: 'Muli',sans-serif;
+	padding-top: 10px;
+}
+.button {
+    position: relative;
+    content: "\f0ee"; 
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+/*--adjust as necessary--*/
+    color: #000;
+    font-size: 18px;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+ 
+/*replace the content value with the 
+corresponding value from the list below*/
+ 
+.grey {
+    color: #555;
+}
+
+.hovercolor:hover {
+	color: black;
+}
+.coolbutton {	
+    position: center;
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    background-color: rgb(229,126,68);
+    font-family: 'Josefin Sans';
+    font-weight: 300;
+    font-size: 3em;
+    display: block;
+    padding: 4px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    -moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 0px rgb(238,105,30), 0px 9px 25px rgba(0,0,0,.7);
+    margin: 100px auto;
+    width: 250px;
+    text-align: center;
+    
+    -webkit-transition: all .1s ease;
+    -moz-transition: all .1s ease;
+    -ms-transition: all .1s ease;
+    -o-transition: all .1s ease;
+    transition: all .1s ease;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    cursor: pointer;
+}
+
+.coolbutton:active {
+    -webkit-box-shadow: 0px 3px 0px rgb(238,105,30), 0px 3px 6px rgba(0,0,0,.9);
+    -moz-box-shadow: 0px 3px 0px rgb(236,102,26), 0px 3px 6px rgba(0,0,0,.9);
+    box-shadow: 0px 3px 0px rgbargb(238,105,30), 0px 3px 6px rgba(0,0,0,.9);
+    position: relative;
+    top: 6px;
+}
+
+.fancyWhite {
+	color:#FFFFFF;
+	text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 70px #fff, 0 0 80px #fff, 0 0 100px #fff, 0 0 150px #fff;
+}
+
+input[name="os"],input[name="version"]  {
+    display: none;
+}
+
+input[name="os"]+label, input[name="version"]+label {
+    color: #CCCCCC;
+}
+
+input[name="os"]:checked+label,input[name="version"]:checked+label {
+    color: black;
+}
