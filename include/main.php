@@ -14,13 +14,17 @@ DEFINE('WEBROOT', ROOT);  // define defalut values for webroot.  it may be chang
 // init session
 session_start();
 if (session_cache_expire() == -1) {
-    session_cache_expire(time() + 10);
+    //session_cache_expire(time() + 1000);
+}
+
+if (!isset($_SESSION['projectId'])) {
+	$_SESSION['projectId'] = rand();
 }
 
 //header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 
 
-$GLOBALS["VERSION"] = "0.5";
+$GLOBALS["VERSION"] = "0.1";
 
 $GLOBALS["time_start"] = microtime(true);
 

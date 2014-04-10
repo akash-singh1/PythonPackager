@@ -19,6 +19,7 @@ Your are currently managing project with id "<?php echo $id; ?>".  <br><br>
 Please choose the main process to launch from the list of files in the zip below:
 
 
+<form action="<?php echo ROOT; ?>manage/modify.php" method="POST">
 <table>
 	<tr><td>Filename</td></tr>
 <?php
@@ -26,16 +27,15 @@ $dir = scandir($projectFolder."/src");
 
 
 foreach ($dir as $file) {
-	if (!startsWith($dir, ".")) {
-		echo "<tr><td><input type='radio' name='".$file."'>".$file."</input></td></tr>";
-	}
-	else echo "<tr><td>ERROR</td></tr>";
+	echo "<tr><td><input type='radio' name='mainFile' value='".$file."'>".$file."</input></td></tr>";
 }
 
 ?>
 
 </table>
 
+<input type='submit' name='submit' value='Set launch script!' alt='CONVERT NOW!' class='coolbutton'></input>
+</form>
 
 <?php
 
