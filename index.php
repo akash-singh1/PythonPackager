@@ -41,8 +41,14 @@ foreach ($os_array as $regex => $value) {
 </h1>
 
 <div class="centerDiv">
-  <form action="<?php echo ROOT; ?>process.php" class="dropzone dropzoneFormat resp" id="my-awesome-dropzone">
-        Drag or click to <span class="upload">Upload</span> 
+  <form action="<?php echo ROOT; ?>process.php" class="dropzone dropzoneFormat resp">
+		Drag or click to <span class="upload">Upload</span>
+		<br>
+		<span class="fa fa-cloud-upload resp"></span>
+		<br>
+		<div class="fallback">
+			<input name="file" type="file" multiple>
+		</div>
   </form>
 </div>
 
@@ -56,7 +62,7 @@ foreach ($os_array as $regex => $value) {
 	<input type="radio" name="version" class="fancyRadio" value="2.7" id="2.7"><label for="2.7">2.7</label>
 	<input type="radio" name="version" class="fancyRadio" value="3.4" id="3.4"><label for="3.4">3.4</label>
 	
-	<input type='submit' name='submit' value='Convert it!' alt='CONVERT NOW!' class='coolbutton resp'>
+	<input type='submit' name='submit' value='Convert' alt='CONVERT NOW!' class='coolbutton resp'>
 </form>
 
 <?php

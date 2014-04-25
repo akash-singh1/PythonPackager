@@ -1,6 +1,10 @@
 $(document).ready(function(){
+	//save root
 	var root = '<?php echo ROOT; ?>';
 
+	//------------------------
+	//  Responsive Text
+	//------------------------
 	//var origwidth = $(window).width();
 	var origwidth = 1265;
 	$(".resp").each(function(){
@@ -14,7 +18,24 @@ $(document).ready(function(){
 	}
 	resizeText();
 	$(window).resize(resizeText);
-
+	
+	
+	//------------------------
+	//   Background Parallax
+	//------------------------
+	var positionBackground = function(){
+		var offset =  $(window).scrollTop();
+		if (offset > 0 && offset < $(window).height()) {
+			$(document.body).css("background-position", "0 " + (-0.3 * offset) + "px");
+		}
+	}
+	positionBackground();
+	$(window).scroll(positionBackground);
+	
+	
+	//------------------------
+	//   Rocket Animation
+	//------------------------
 	$("#rocket").click(function(){
 		var top1 = 0;
 		var left1 = 0;

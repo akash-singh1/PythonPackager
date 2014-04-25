@@ -8,7 +8,7 @@ if (!defined("ROOT")) {
 //error_reporting(0);
 
 DEFINE('WEBROOT', ROOT);  // define defalut values for webroot.  it may be changed after the include
-
+DEFINE('CDN', 'https://pyrocket.objects.cdn.dream.io/');
 
 
 // init session
@@ -40,7 +40,7 @@ include "errorLogger.php";
 date_default_timezone_set('America/Los_Angeles');
 
 
-function print_header($title) {
+function print_header($title = "PyRocket") {
     $titleText = $title;
     include_once("header.php");
 }
