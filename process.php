@@ -4,21 +4,21 @@ define('ROOT', './');
 
 require_once(ROOT.'include/main.php');
 
+$id = $project['id'];
 
-$allowedExts = array("gif", "jpeg", "jpg", "png", "zip");
+$projectFolder = $project['folder'];
+
+
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
+
+$fileName = preg_replace('/[^A-Za-z0-9_.\-]/', '_', $_FILES["file"]["name"]);
+
 if (($_FILES["file"]["size"] < 20000000)) {
 	if ($_FILES["file"]["error"] > 0) {
 		echo "Error: " . $_FILES["file"]["error"] . "<br>";
 	} else {
-		if (isset($_SESSION['projectId'])) {
-			$id = $_SESSION['projectId'];
-		}
-		$projectFolder = ROOT . "uploads/" . $id;
-		mkdir($projectFolder);
-		mkdir($projectFolder."/src");
-
+		echo $projectFolder;
 		//echo "Id: " . $id . "<br>";
 
 
@@ -28,9 +28,10 @@ if (($_FILES["file"]["size"] < 20000000)) {
 		//echo "Stored in: " . $_FILES["file"]["tmp_name"];
 
 		if ($_FILES["file"]["type"] == "application/zip") {
-			if(move_uploaded_file($_FILES["file"]["tmp_name"], $projectFolder."/uploaded.zip")) {
+			
+			if(move_uploaded_file($_FILES["file"]["tmp_name"], $projectFolder."/".$fileName)) {
 				$zip = new ZipArchive();
-				$x = $zip->open($projectFolder."/uploaded.zip");
+				$x = $zip->open($projectFolder."/".$fileName);
 				if ($x === true) {
 					$zip->extractTo($projectFolder."/src"); //change this to the correct site path
 					$zip->close();
@@ -39,9 +40,7 @@ if (($_FILES["file"]["size"] < 20000000)) {
 				}
 			}
 		} else {
-			if(move_uploaded_file($_FILES["file"]["tmp_name"], $projectFolder."/src/".
-				preg_replace('/[^A-Za-z0-9_.\-]/', '_', $_FILES["file"]["name"])
-				)) {
+			if(move_uploaded_file($_FILES["file"]["tmp_name"], $projectFolder."/src/".$fileName)) {
 				echo("Uploaded Successfully!");
 			}
 		}
@@ -51,5 +50,7 @@ if (($_FILES["file"]["size"] < 20000000)) {
 		//unlink($_FILES["file"]["tmp_name"]);
 	}
 }
+
+save_project_data($project);
 
 ?>

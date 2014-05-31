@@ -23,7 +23,7 @@ $(document).ready(function(){
 	//------------------------
 	//   Background Parallax
 	//------------------------
-	var positionBackground = function(){
+	/*var positionBackground = function(){
 		var offset =  $(window).scrollTop();
 		if (offset > 0 && offset < $(window).height()) {
 			$(document.body).css("background-position", "0 " + (-0.3 * offset) + "px");
@@ -32,7 +32,7 @@ $(document).ready(function(){
 	positionBackground();
 	$(window).scroll(positionBackground);
 	
-	
+	*/
 	//------------------------
 	//   Rocket Animation
 	//------------------------

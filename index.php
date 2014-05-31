@@ -67,6 +67,6 @@ foreach ($os_array as $regex => $value) {
 
 <?php
 
-print_footer();
+print_footer($project);
 
 ?>

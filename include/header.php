@@ -21,7 +21,7 @@
         <!-- for background <div class="body-bg"></div> -->
 		<div class="container">
 			<div class="header resp">
-				<a href="<?php echo ROOT; ?>" class="noLinkFormat"><?php echo $titleText; ?></a>
+				<a href="<?php echo ROOT; ?>" class="noLinkFormat">PyRocket: Python Packager<!-- <?php echo $titleText; ?> --></a>
 			</div>
 			<img src="https://pyrocket.objects.cdn.dream.io/rocket.png" id="rocket">
 

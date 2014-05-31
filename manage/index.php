@@ -12,9 +12,14 @@ $id = htmlentities($_GET['id']);
 
 $projectFolder = ROOT . "uploads/" . $id;
 
+echo "Project folder: ";
+echo $projectFolder;
+
 ?>
 
 Your are currently managing project with id "<?php echo $id; ?>".  <br><br>
+
+<?php if(!isset($project['launchScript'])) { ?>
 
 Please choose the main process to launch from the list of files in the zip below:
 
@@ -36,6 +41,13 @@ foreach ($dir as $file) {
 
 <input type='submit' name='submit' value='Set launch script!' alt='CONVERT NOW!' class='coolbutton'></input>
 </form>
+
+<?php } else { ?>
+
+Download your application!
+
+
+<?php } ?>
 
 <?php
 

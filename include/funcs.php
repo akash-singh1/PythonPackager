@@ -4,6 +4,20 @@ if (!defined("ROOT")) {
     header("HTTP/1.0 404 Not Found");
     die();
 }
+
+function save_project_data($project) {
+	mkdir($project['folder']);
+	mkdir($project['folder']."/src");
+	// unlink($project['folder']."/info.dat");
+	file_put_contents($project['folder']."/info.dat", json_encode($project));
+}
+
+function load_project_data($project) {
+	$project = json_decode(file_get_contents($project['folder']."/info.dat"), true);
+	$project['folder'] = ROOT."uploads/".$project['id'];
+	return $project;
+}
+
 /*
  * Remove newlines from string
  * Modified from Stack Overflow
